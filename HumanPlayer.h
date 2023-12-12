@@ -13,17 +13,17 @@ using namespace std;
 //
 class HumanPlayer : public Player {
 public:
-    // TODO: Declare Default Ctor
+    // Declare Default Ctor
     HumanPlayer();
-    // TODO: Declare Custom Ctor
+    // Declare Custom Ctor
     // 'explicit' for constructor with one argument to avoid implicit conversions
     explicit HumanPlayer(const string& name);
 
-    // TODO: New version of getGuess that reads in an integer
-    //       if the integer is not between 0-99 (inclusive),
-    //       the user will be prompted to enter the guess again.
-    //       The guess will be returned.
-    int getGuess() override;                    // TODO: Declare the virtual getGuess()
+    // New version of getGuess that reads in an integer
+    // if the integer is not between 0-99 (inclusive),
+    // the user will be prompted to enter the guess again.
+    // The guess will be returned.
+    int getGuess() override;
 };
 
 #endif // HUMANPLAYER_H

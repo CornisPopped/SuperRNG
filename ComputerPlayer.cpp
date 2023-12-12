@@ -3,33 +3,33 @@ using namespace std;
 
 mt19937 ComputerPlayer::gen(random_device{}()); // Initialize the static RNG
 
-// TODO: Define default ctor
-//       Although it seems redundant,
-//       Clang-Tidy issues without
-//       direct initialization of
-//       rngStart and rngRange.
+// Define default ctor
+// Although it seems redundant,
+// Clang-Tidy issues without
+// direct initialization of
+// rngStart and rngRange.
 ComputerPlayer::ComputerPlayer() : Player(), rngStart(0), rngRange(100) {
     resetRNG();
 }
 
-// TODO: Define custom ctor
+// Define custom ctor
 ComputerPlayer::ComputerPlayer(const string& name) : Player(), rngStart(0), rngRange(100) {
-    // TODO: Initialize RNG range and start values
+    // Initialize RNG range and start values
     setName(name);
     resetRNG();
 }
 
-// TODO: Define overridden getGuess method
+// Define overridden getGuess method
 int ComputerPlayer::getGuess() {
     uniform_int_distribution<> distr(rngStart, rngStart + rngRange - 1);
     return distr(gen);
 }
 
 
-// TODO: Define overridden wrongGuess method
+// Define overridden wrongGuess method
 void ComputerPlayer::wrongGuess(int guess, int answer) {
-    // TODO: Print if the guess is too high or too low
-    //       Call appropriate RNG adjustment methods
+    // Print if the guess is too high or too low
+    // Call appropriate RNG adjustment methods
     if (guess > answer) {
         cout << "Your guess is too high." << endl;
         adjustRangeDown(guess);
@@ -39,25 +39,25 @@ void ComputerPlayer::wrongGuess(int guess, int answer) {
     }
 }
 
-// TODO: Define overridden endRound method
+// Define overridden endRound method
 void ComputerPlayer::endRound(bool hasWon) {
-    // TODO: reset RNG at end of round
+    // reset RNG at end of round
     resetRNG();
     Player::endRound(hasWon);
 }
 
-// TODO: Define RNG reset method
+// Define RNG reset method
 void ComputerPlayer::resetRNG() {
     rngStart = 0;
     rngRange = 100;
 }
 
-// TODO: Define method to adjust RNG range downwards when guess is too high
+// Define method to adjust RNG range downwards when guess is too high
 void ComputerPlayer::adjustRangeDown(int guess) {
     rngRange = guess - rngStart;
 }
 
-// TODO: Define method to adjust RNG range upwards when guess is too low
+// Define method to adjust RNG range upwards when guess is too low
 void ComputerPlayer::adjustRangeUp(int guess) {
     // Adjust rngStart first
     int newStart = guess + 1;

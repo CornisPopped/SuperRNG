@@ -9,36 +9,36 @@ public:
     // Default constructor
     Player();
 
-    // TODO: Mutator/Setter for the name member variable
+    // Mutator/Setter for the name member variable
     // Uses 'const' reference parameter
     // to avoid copying the string and ensures the setter won't change
     // the original value of the string variable.
     void setName(const string& newName);
 
-    // TODO: Accessor/Getter for the name member variable
+    // Accessor/Getter for the name member variable
     // Marked 'const' because it is
     // good practice for accessor/getter methods to not modify the object's state.
     string getName() const;
 
-    // TODO: Method to handle getting the guess for the game
+    // Method to handle getting the guess for the game
     // Marked virtual to allow derived classes to override it.
     // Returns int because it is a random number game.
     virtual int getGuess();
 
-    // TODO: Method to handle wrong guesses.
+    // Method to handle wrong guesses.
     // Takes the guess as an int
     // parameter and reports if "Your guess is too high" or "Your guess is too low."
     virtual void wrongGuess(int guess, int answer);
 
-    // TODO: Method 'endRound' which takes a bool argument.
+    // Method 'endRound' which takes a bool argument.
     // If true, the user has won. Increments wins by 1.
     // Virtual because ComputerPlayer.h modifies it
     virtual void endRound(bool hasWon);
 
-    // TODO: Overloaded operator '>' to compare the number of wins between players.
+    // Overloaded operator '>' to compare the number of wins between players.
     bool operator>(const Player& otherPlayer) const;
 
-    // TODO: Overloaded operator '<<' to output name of player and their number of wins.
+    // Overloaded operator '<<' to output name of player and their number of wins.
     // Declare friend function for the overloaded operator '<<'
     friend std::ostream& operator<<(std::ostream& os, const Player& player);
 

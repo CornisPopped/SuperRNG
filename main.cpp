@@ -2,7 +2,7 @@
 #include <cstdlib>
 #include <ctime>
 #include <string>
-// TODO: Include the other header files you write for the three classes.
+// Include the other header files you write for the three classes.
 #include "Player.h"
 #include "ComputerPlayer.h"
 #include "HumanPlayer.h"
@@ -14,7 +14,7 @@ void outputStats(const Player& player1, const Player& player2);
 
 int main()
 {
-    // TODO: Set the Random Seed!
+    // Set the Random Seed!
     srand(static_cast<unsigned int>(time(nullptr)));
 
     int numPlayers;
@@ -37,7 +37,7 @@ int main()
         }
     }
 
-    // TODO: Initialize the players
+    // Initialize the players
     HumanPlayer h1("Player 1"), h2("Player 2");
     ComputerPlayer c1("CPU 1"), c2("CPU 2");
     Player* p1, * p2;
@@ -128,7 +128,7 @@ bool checkForWin(Player& player, int answer)
     return win;
 }
 
-// TODO: Write the function to output game stats (called after the game loop
+// Write the function to output game stats (called after the game loop
 void outputStats(const Player& player1, const Player& player2) {
     cout << "Final Results:" << endl;
     cout << player1 << endl;
