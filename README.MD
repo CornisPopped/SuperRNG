@@ -1,4 +1,4 @@
-# Super Random Number Generator Guessing Game
+# SuperRNG Guessing Game
 
 ## Overview
 This Guessing Game is a console-based application developed in C++. 
