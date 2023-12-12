@@ -2,7 +2,7 @@
 #include <cstdlib>
 #include <ctime>
 #include <string>
-// Include the other header files you write for the three classes.
+// Header files for derived classes
 #include "Player.h"
 #include "ComputerPlayer.h"
 #include "HumanPlayer.h"
@@ -23,12 +23,12 @@ int main()
 
     while (!validInput) {
         cout << "Enter the number of human players (0, 1, or 2): ";
-        getline(cin, inputLine); // Use getline to read the whole line
-        stringstream ss(inputLine); // Use a stringstream for parsing
+        getline(cin, inputLine);                           // Use getline to read the whole line
+        stringstream ss(inputLine);                        // Use a stringstream for parsing
 
-        if (ss >> numPlayers && !(ss >> inputLine)) { // Check if we got an integer and nothing else
+        if (ss >> numPlayers && !(ss >> inputLine)) {     // Check if we got an integer and nothing else
             if (numPlayers >= 0 && numPlayers <= 2) {
-                validInput = true; // Input is valid
+                validInput = true;                        // Input is valid
             } else {
                 cout << "Please enter a whole number between 0 and 2." << endl;
             }
